@@ -2,6 +2,8 @@ package com.ubs.opsit.interviews;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.ubs.opsit.interviews.TimeConverterImpl.STATE;
@@ -14,7 +16,17 @@ import com.ubs.opsit.interviews.TimeConverterImpl.STATE;
  */
 public class TimeConverterImplTest {
 
-	TimeConverterImpl timerConverter = new TimeConverterImpl();
+	private TimeConverterImpl timerConverter;
+	
+	@Before
+	public void setUp() {
+		timerConverter = new TimeConverterImpl();
+	}
+	
+	@After
+    public void tearDown() {
+	    timerConverter = null;
+    }
 
 	/**
 	 * For top yellow lamp
